@@ -6,11 +6,13 @@ import App from "./components/App";
 import {createStore} from 'redux';
 import reducers from './reducers';
 import * as actions from './actions';
-
+import {Provider} from 'react-redux';
 const store = createStore(reducers);
 
 
 ReactDOM.render(
-  <App/>,
+  <Provider store={store}>
+    <App/>
+  </Provider>,
   document.getElementById('root')
 );
